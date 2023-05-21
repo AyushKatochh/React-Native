@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, ImageBackground, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import Animated from 'react-native-reanimated';
-import { Acs } from 'react-native-aos';
 
 const Screen2 = ({ navigation }) => {
   const [showThirdImage, setShowThirdImage] = useState(false);
@@ -15,14 +14,10 @@ const Screen2 = ({ navigation }) => {
 
   return (
     <ImageBackground source={require('./award_bg.png')} style={styles.container}>
-      <Image source={require('./curtain.png')} style={[styles.curtain, styles.curtainLeft]} resizeMode="contain" />
-      <Image source={require('./curtain.png')} style={[styles.curtain, styles.curtainRight]} resizeMode="contain" />
       <View style={styles.contentContainer}>
         <Image source={require('./main-heart.png')} style={styles.imageAbove} resizeMode="contain" />
         <Text style={styles.screenText}>Give U Some Love</Text>
-        <Animated.View
-          style={[styles.cardContainer, Acs.fadeIn, { transform: [{ translateY: showThirdImage ? 0 : 100 }] }]}
-        >
+        <Animated.View style={[styles.cardContainer]}>
           <View style={styles.avtarContainer}>
             <Image source={require('./avtar2.png')} style={styles.avtarImage} resizeMode="contain" />
           </View>
@@ -47,18 +42,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  curtain: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    width: 100,
-  },
-  curtainLeft: {
-    left: 0,
-  },
-  curtainRight: {
-    right: 0,
-  },
   contentContainer: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -72,22 +55,22 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginBottom: 20,
     color: 'yellow',
+    fontStyle: 'italic',
   },
   cardContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingHorizontal: 20,
-    marginBottom: 20,
-    width: 300,
-    height: 100,
-    backgroundColor: '#fff',
+    width: 200,
+    height: 80,
+    backgroundColor: 'rgba(255, 255, 255, 0.7)',
     borderRadius: 10,
+    padding: 10,
   },
   avtarContainer: {
-    width: 70,
-    height: 70,
-    borderRadius: 35,
+    width: 50,
+    height: 50,
+    borderRadius: 25,
     overflow: 'hidden',
   },
   avtarImage: {
@@ -96,13 +79,11 @@ const styles = StyleSheet.create({
   },
   cardTextContainer: {
     flex: 1,
-    marginLeft: 20,
-    justifyContent: 'center',
+    marginLeft: 10,
   },
   cardText: {
-    fontSize: 18,
-    color: 'purple',
-    fontStyle: 'italic',
+    fontSize: 16,
+    color: 'black',
   },
   image: {
     width: 200,
