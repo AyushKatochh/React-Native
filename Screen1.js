@@ -15,6 +15,7 @@ const Screen1 = ({ navigation }) => {
       <View style={styles.contentContainer}>
         <Image source={require('./castingLogo.png')} style={styles.imageAbove} resizeMode="contain" />
         <Text style={styles.screenText}>Casting Call</Text>
+        <Text style={styles.screenText}>The Results R In</Text>
         <Image source={require('./girlClap.png')} style={styles.image} resizeMode="contain" />
         <Image source={require('./awardPlatform.png')} style={styles.imageBelow} resizeMode="contain" />
       </View>
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
   screenText: {
     fontSize: 24,
     marginBottom: 20,
-    color: 'yellow',
+    color: 'purple',
     fontStyle: 'italic',
     transform: [{ rotate: '-5deg' }],
   },
