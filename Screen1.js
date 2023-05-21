@@ -12,11 +12,9 @@ const Screen1 = ({ navigation }) => {
 
   return (
     <ImageBackground source={require('./award_bg.png')} style={styles.container}>
-      <Image source={require('./curtain.png')} style={[styles.curtain, styles.curtainLeft]} resizeMode="contain" />
-      <Image source={require('./curtain.png')} style={[styles.curtain, styles.curtainRight]} resizeMode="contain" />
       <View style={styles.contentContainer}>
         <Image source={require('./castingLogo.png')} style={styles.imageAbove} resizeMode="contain" />
-        <Text style={styles.screenText}>Screen 1</Text>
+        <Text style={styles.screenText}>Casting Call</Text>
         <Image source={require('./girlClap.png')} style={styles.image} resizeMode="contain" />
         <Image source={require('./awardPlatform.png')} style={styles.imageBelow} resizeMode="contain" />
       </View>
@@ -30,18 +28,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  curtain: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    width: 100,
-  },
-  curtainLeft: {
-    left: 0,
-  },
-  curtainRight: {
-    right: 0,
-  },
   contentContainer: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -54,6 +40,9 @@ const styles = StyleSheet.create({
   screenText: {
     fontSize: 24,
     marginBottom: 20,
+    color: 'yellow',
+    fontStyle: 'italic',
+    transform: [{ rotate: '-5deg' }],
   },
   image: {
     width: 200,
