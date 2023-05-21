@@ -11,6 +11,7 @@ const Screen3 = ({ navigation }) => {
         <Text style={styles.screenText}>Screen 3</Text>
         <Image source={require('./girlClap.png')} style={styles.image} resizeMode="contain" />
         <Image source={require('./awardPlatform.png')} style={styles.imageBelow} resizeMode="contain" />
+        <Text style={styles.friendsText}>4 Friends give you some Love</Text>
       </View>
     </ImageBackground>
   );
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
   screenText: {
     fontSize: 24,
     marginBottom: 20,
+    color: 'yellow',
   },
   image: {
     width: 200,
@@ -56,6 +58,11 @@ const styles = StyleSheet.create({
     width: 400,
     height: 200,
     marginTop: 20,
+  },
+  friendsText: {
+    fontSize: 18,
+    color: 'yellow',
+    marginTop: 10,
   },
 });
 
