@@ -4,8 +4,6 @@ import { View, Text, ImageBackground, Image, StyleSheet } from 'react-native';
 const Screen3 = ({ navigation }) => {
   return (
     <ImageBackground source={require('./award_bg.png')} style={styles.container}>
-      <Image source={require('./curtain.png')} style={[styles.curtain, styles.curtainLeft]} resizeMode="contain" />
-      <Image source={require('./curtain.png')} style={[styles.curtain, styles.curtainRight]} resizeMode="contain" />
       <View style={styles.contentContainer}>
         <Image source={require('./main-heart.png')} style={styles.imageAbove} resizeMode="contain" />
         <Text style={styles.screenText}>Screen 3</Text>
@@ -23,18 +21,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  curtain: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    width: 100,
-  },
-  curtainLeft: {
-    left: 0,
-  },
-  curtainRight: {
-    right: 0,
-  },
   contentContainer: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -48,6 +34,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginBottom: 20,
     color: 'yellow',
+    fontStyle: 'italic',
   },
   image: {
     width: 200,
